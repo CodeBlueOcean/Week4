@@ -1,0 +1,183 @@
+<!--Overview-->
+
+let i = 0;
+
+while(i <5) {
+    console.log('Loop iteration #', i);
+    i +=1;
+}
+
+for (let i = 0; i < 5; i++) {
+    console.log('Loop iteration #', i);
+}
+
+for (let i = 0; i < 5; i += 1) {
+    console.log('Loop iteration #', i);
+}
+
+for (let i = 0; i < 10; i +=2) {
+    console.log('Printing only even numbers between 0 and 9:', i);
+}
+
+for (initialization; condition; final expression) {
+    ...code to execute...  
+}
+
+for (let i = 0; i < 5; i++) {
+    ...code to execute...console.log('Loop iteration #', i);
+}
+
+const guestsArray = ['Jack', 'Aravind', 'Samira', 'Haley', 'Lydia', 'Adrian'];
+
+for (let i = 0; i < guestsArray.length; i++) {
+    console.log('Welcome to the party' + guestsArray[i] + '!');
+}
+
+const guestsArray = ['Jack', 'Aravind', 'Samira', 'Haley', 'Lydia', 'Adrian'];
+for (const guest of guestsArray) {
+    console.log('Welcome to the party' + guest + '!');
+}
+
+for (const/let variableName of arrayName) {
+    ...code to execute once per each item in the array...
+    ...use variableName to access each array item in turn...
+}
+
+for (let i = 0; i < guestsArray.length; i++) {
+    console.log('Welcome to the Party' + guestsArray[i] + '!');
+}
+
+for (const guest of guestsArray) {
+    console.log('Welcome to the party ' + guest + '!');
+}
+
+for (let guest of guestsArray) {
+    guest = guest.toUpperCase();
+    console.log('Welcome to the party' + guest + '!')
+}
+
+for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        break;
+    }
+
+}
+
+
+for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        continue;
+    }
+    
+}
+
+<!--More Array Methods-->
+
+Syntax: firstArray.concat(secondArray)
+const primaryColorsArr = ['red', 'blue', 'yellow']
+const secondaryColorsArr = ['purple','green', 'orange'];
+const colorsArr = primaryColorsArr.concat(secondaryColorsArr);
+colorsArr ['red', 'blue', 'yellow', 'purple', 'green', 'orange']
+
+Syntax: sort()
+const colorsArr = ['red', 'blue', 'yellow', 'purple', 'green', 'orange']
+colorsArr.sort();
+colorsArr ['blue', 'green', 'orange', 'purple', 'red', 'yellow']
+
+Syntax: reverse()
+const colorsArr = ['blue', 'green', 'orange', 'purple', 'red', 'yellow']
+colorsArr.reverse();
+colorsArr ['yellow', 'red', 'purple', 'orange', 'green', 'blue']
+
+Syntax: array.slice(beginIndex, endIndex)
+const testArr =['a','b','c','d','e','f','g']
+let slicedArr = testArr.slice(2, 5);
+<!--slicedArr ['c','d','e']-->
+let slicedArr = testArr.slice(2);
+<!--slicedArr ['c','d','e','f','g']-->
+let slicedArr = testArr.slice();
+<!--slicedArr ['a','b','c','d','e','f','g']-->
+
+Syntax: array.slice(atIndex, 0, item)
+const testArr = ['a','b','c','d']
+testArr.splice(2, 0, 'x'); 
+<!--testArr ['a','b','x','c','d']-->
+testArr.splice(2, 0, 'x', 'y', 'z');
+<!--testArr ['a','b','x','y','z','c','d']-->
+
+Syntax: array.splice(atIndex, numItemsToRemove)
+splice() returns the removed items(s)
+const testArr = ['a','b','x','c','d','e','f']
+const removed = testArr.splice(1, 3);
+testArr ['a','e','f'] removed ['b','c','d']
+
+Syntax: array.splice(atIndex, numItemsToReplace, item(s))
+splice() returns the replaced item(s)
+const testArr = ['a','b','x','c','d','e','f']
+const replaced = testArr.splice(1, 3, 'uno');
+
+testArr['a','uno','e','f'] replaced ['b','c','d']
+
+<!--More about Strings-->
+
+<!--Strings: for...of-->
+const myStr = 'abcdefg';
+for(const x of myStr) {
+    console.log(x);
+}
+
+<!--Strings: index & length-->
+const myStr = 'abcdefg';
+myStr[0] 'a'
+myStr[5] 'f'    
+
+myStr.length 7 
+myStr[myStr.length-1] 'g'
+
+<!--IndexOf()-->
+myStr.indexOf('b')        2
+<!--Includes()-->
+myStr.includes('b')   true
+myStr.includes('boo')  true
+<!--Slice()-->
+myStr.slice(2,5)  'boo'
+myStr.slice(2)    'boose'
+<!--Split()-->
+const myStr = 'little red ballon';
+myStr.split(''); ['little','red','ballon']
+
+const myStr='small,medium,large';
+myStr.split(','); ['small','medium','large']
+
+<!--insertBefore()-->
+parentNode.insertBefore(newEl,parentNode.lastChild)
+
+<!--appendChild()-->
+parentNode.appendChild(newText);
+
+<!--Removing Nodes-->
+remove()
+nodeToRemove.remove();
+
+removeChild()
+parentNode.removeChild(parentNode.firstChild);
+
+removeChild()
+while(parentNode.firstChild){
+    parentNode.removeChild(parentNode.firstChild);
+}
+
+firstElementChild
+parentNode.firstElementChild
+
+<!--Cloning Nodes-->
+
+<!--Cloning a single node-->
+cloneNode()
+const newNode = nodeToClone.cloneNode();
+<!--Cloning a branch-->
+cloneNode(true)
+const newNode = nodeToClone.cloneNode(true);
+<!--lastElementChild-->
+parentNode.lastElementChild
+
